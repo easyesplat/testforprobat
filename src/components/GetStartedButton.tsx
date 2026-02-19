@@ -1,16 +1,20 @@
-"use client";
-import { ProbatProviderClient, Experiment } from "@probat/react";
-import OriginalComponent from "./GetStartedButton.original";
-import ExperimentVariant from "./GetStartedButton.experiment";
+import React from 'react'
 
-export default function GetStartedButton(props: any) {
-  return (
-    <ProbatProviderClient userId="f3a91e3e-da2b-4b49-a487-8202d07182c0">
-      <Experiment
-        id="563d8f57-fe86-4566-9e1b-fc71e4e8328f"
-        control={<OriginalComponent {...props} />}
-        variants={{ experiment: <ExperimentVariant {...props} /> }}
-      />
-    </ProbatProviderClient>
-  );
+interface GetStartedButtonProps {
+  label?: string
+  large?: boolean
 }
+
+const GetStartedButton: React.FC<GetStartedButtonProps> = ({ label = 'Get Started Now', large = true }) => {
+  return (
+    <button
+      className={`btn btn-primary${large ? ' btn-large' : ''}`}
+      style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '2px' }}
+    >
+      <span>{label}</span>
+      <span style={{ fontSize: '0.7em', opacity: 0.85, fontWeight: 400 }}>Free forever · No credit card</span>
+    </button>
+  )
+}
+
+export default GetStartedButton
