@@ -48,9 +48,16 @@ body {
   color: white;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .btn-primary {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
+
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  animation-play-state: paused;
 }
 
 .btn-outline {
@@ -96,6 +103,16 @@ body {
   color: #718096;
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(102, 126, 234, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.5);
+  }
 }
 
 /* Responsive design */
