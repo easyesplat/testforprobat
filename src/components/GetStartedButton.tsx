@@ -6,8 +6,18 @@ interface GetStartedButtonProps {
 }
 
 const GetStartedButton: React.FC<GetStartedButtonProps> = ({ label = 'Get Started Free', large = false }) => {
+  const handleClick = () => {
+    // Track button click for experiment
+    if ((window as any).gtag) {
+      (window as any).gtag('event', 'click', {
+        event_category: 'experiment',
+        event_label: 'get_started_button_v3'
+      });
+    }
+  };
+
   return (
-    <button className={`btn btn-primary${large ? ' btn-large' : ''}`}>
+    <button className={`btn btn-primary${large ? ' btn-large' : ''}`} onClick={handleClick}>
       {label}
     </button>
   )
