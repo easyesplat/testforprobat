@@ -32,7 +32,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border: none;
   border-radius: 8px;
   font-size: 16px;
@@ -53,6 +53,14 @@ body {
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
 
+.btn-primary:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
 .btn-outline {
   background: transparent;
   color: #667eea;
@@ -66,7 +74,7 @@ body {
 }
 
 .btn-large {
-  padding: 16px 32px;
+  padding: 16px 28px;
   font-size: 18px;
 }
 
