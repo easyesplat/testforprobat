@@ -70,6 +70,35 @@ body {
   font-size: 18px;
 }
 
+/* V2 Variant - Enhanced visual hierarchy with icon */
+.btn-primary-v2 {
+  gap: 8px;
+}
+
+.btn-primary-v2 .btn-text {
+  display: inline-block;
+}
+
+.btn-primary-v2 .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary-v2 .btn-icon svg {
+  display: block;
+  color: inherit;
+}
+
+.btn-primary-v2:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary-v2:hover .btn-icon {
+  transform: translateX(4px);
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
