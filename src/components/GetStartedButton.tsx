@@ -1,3 +1,4 @@
+import { Experiment } from '@probat/react';
 import React from 'react'
 
 interface GetStartedButtonProps {
@@ -5,12 +6,27 @@ interface GetStartedButtonProps {
   large?: boolean
 }
 
-const GetStartedButton: React.FC<GetStartedButtonProps> = ({ label = 'Get Started Free', large = false }) => {
-  return (
-    <button className={`btn btn-primary${large ? ' btn-large' : ''}`}>
-      {label}
-    </button>
-  )
+const GetStartedButton: React.FC<GetStartedButtonProps> = ({ label = 'Start Building Now', large = false }) => {
+    return (
+    <Experiment
+      id="exp_GetStartedButton_20260310_f8a3c1d2"
+      control={
+        <button className={`btn btn-primary${large ? ' btn-large' : ''}`}>
+              {label}
+            </button>
+      }
+      variants={{
+        V3: (
+          <button 
+                className={`btn btn-primary${large ? ' btn-large' : ''}`}
+                aria-label="Start building your project now"
+              >
+                {label}
+              </button>
+        ),
+      }}
+    />
+  );
 }
 
 export default GetStartedButton
