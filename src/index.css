@@ -53,6 +53,17 @@ body {
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
 
+.btn-primary-solid {
+  background: #667eea;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.btn-primary-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
 .btn-outline {
   background: transparent;
   color: #667eea;
