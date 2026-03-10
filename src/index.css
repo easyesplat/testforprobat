@@ -53,6 +53,11 @@ body {
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
 
+.btn-enhanced:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
 .btn-outline {
   background: transparent;
   color: #667eea;
