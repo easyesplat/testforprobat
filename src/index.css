@@ -70,6 +70,32 @@ body {
   font-size: 18px;
 }
 
+/* Pulse animation for prominent CTA variant */
+@keyframes pulse-cta {
+  0%, 100% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.btn-primary-prominent {
+  animation: pulse-cta 2s ease-in-out infinite;
+}
+
+.btn-primary-prominent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary-prominent {
+    animation: none;
+  }
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
