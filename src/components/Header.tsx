@@ -27,7 +27,7 @@ const Header: React.FC = () => {
 
         <div className="nav-actions">
           <button className="btn btn-outline">Sign In</button>
-          <GetStartedButton label="Get Started" />
+          <GetStartedButton label="Start Building Now" />
         </div>
 
         <button 
