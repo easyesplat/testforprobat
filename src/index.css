@@ -46,6 +46,8 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.25);
 }
 
 .btn-primary:hover {
@@ -68,6 +70,7 @@ body {
 .btn-large {
   padding: 16px 32px;
   font-size: 18px;
+  transform: scale(1.05);
 }
 
 /* Gradient text */
