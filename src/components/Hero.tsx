@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
               cutting-edge technology. Join thousands of developers who trust our platform.
             </p>
             <div className="hero-actions">
-              <GetStartedButton large />
+              <GetStartedButton />
               <button className="btn btn-outline btn-large">
                 Watch Demo
               </button>
