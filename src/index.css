@@ -70,6 +70,15 @@ body {
   font-size: 18px;
 }
 
+.btn-emphasized {
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  transform: scale(1.02);
+}
+
+.btn-emphasized:hover {
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
