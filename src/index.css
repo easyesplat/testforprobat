@@ -50,7 +50,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3), 0 0 20px rgba(102, 126, 234, 0.4), 0 0 40px rgba(118, 75, 162, 0.2);
 }
 
 .btn-outline {
@@ -96,6 +96,28 @@ body {
   color: #718096;
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* Pulse animation for enhanced button */
+@keyframes subtle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+.btn-animated {
+  animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-animated {
+    animation: none;
+  }
 }
 
 /* Responsive design */
