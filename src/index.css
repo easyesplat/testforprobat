@@ -49,8 +49,8 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.4);
 }
 
 .btn-outline {
@@ -68,6 +68,20 @@ body {
 .btn-large {
   padding: 16px 32px;
   font-size: 18px;
+}
+
+/* Pulse animation for attention-drawing effect */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
 }
 
 /* Gradient text */
