@@ -1,0 +1,15 @@
+/* Enhanced styling for GetStartedButton variant V3 */
+
+.btn-get-started {
+  padding: 18px 36px;
+  font-size: 17px;
+}
+
+.btn-get-started.btn-large {
+  padding: 20px 40px;
+  font-size: 19px;
+}
+
+.btn-get-started:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
