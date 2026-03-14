@@ -70,6 +70,16 @@ body {
   font-size: 18px;
 }
 
+.btn-icon {
+  margin-left: 8px;
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(4px);
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
