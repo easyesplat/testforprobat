@@ -53,6 +53,27 @@ body {
   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
 }
 
+.btn-primary-enhanced {
+  animation: pulse-enhanced 2s ease-in-out infinite;
+}
+
+@keyframes pulse-enhanced {
+  0%, 100% {
+    transform: scale(1.0);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary-enhanced {
+    animation: none;
+  }
+}
+
 .btn-outline {
   background: transparent;
   color: #667eea;
