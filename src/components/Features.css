@@ -51,19 +51,23 @@
   }
 
   .features-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .feature-card {
-    padding: 2rem;
+    padding: 1.5rem;
   }
 
   .feature-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .feature-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+  }
+
+  .feature-description {
+    font-size: 0.9rem;
   }
 }
