@@ -17,6 +17,7 @@
   transition: all 0.3s ease;
   border: 1px solid #f1f5f9;
   text-align: center;
+  cursor: pointer;
 }
 
 .feature-card:hover {
@@ -42,6 +43,11 @@
   color: #718096;
   line-height: 1.6;
   font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card .btn {
+  margin-top: auto;
 }
 
 /* Mobile styles */
