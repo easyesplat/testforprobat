@@ -1,4 +1,5 @@
 import React from "react";
+import { Experiment } from "@probat/react";
 import './Features.css';
 
 interface Feature {
@@ -7,7 +8,8 @@ interface Feature {
   description: string
 }
 
-const Features: React.FC = () => {
+// Control component (original)
+const FeaturesControl: React.FC = () => {
   const features: Feature[] = [
     {
       icon: '⚡',
@@ -64,6 +66,78 @@ const Features: React.FC = () => {
         </div>
       </div>
     </section>
+  )
+}
+
+// Variant component (V2)
+const FeaturesVariant: React.FC = () => {
+  const features: Feature[] = [
+    {
+      icon: '⚡',
+      title: 'Lightning Fast',
+      description: 'Load your pages in under 2 seconds. Keep users engaged with instant interactions.'
+    },
+    {
+      icon: '🔒',
+      title: 'Secure',
+      description: 'Your data is protected with bank-level encryption. Pass audits with built-in compliance tools.'
+    },
+    {
+      icon: '📱',
+      title: 'Responsive',
+      description: 'Deliver flawless experiences on every device. No mobile complaints, ever.'
+    },
+    {
+      icon: '🎨',
+      title: 'Customizable',
+      description: 'Match your exact brand in minutes. No designer or developer required.'
+    },
+    {
+      icon: '🚀',
+      title: 'Scalable',
+      description: 'Start free, grow to millions of users. Never worry about infrastructure limits.'
+    },
+    {
+      icon: '💬',
+      title: 'Support',
+      description: 'Get help when you need it. Real humans answer in under 5 minutes.'
+    }
+  ]
+
+  return (
+    <section className="features" id="features">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">Everything You Need to Succeed</h2>
+          <p className="section-description">
+            Discover the features that make our platform the best choice for your needs.
+          </p>
+        </div>
+        
+        <div className="features-grid">
+          {features.map((feature, index) => (
+            <div key={index} className="feature-card">
+              <div className="feature-icon">
+                {feature.icon}
+              </div>
+              <h3 className="feature-title">{feature.title}</h3>
+              <p className="feature-description">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Wrapper component with Experiment
+const Features: React.FC = () => {
+  return (
+    <Experiment
+      id="exp_Features_20260315_a7f3b2e9"
+      control={<FeaturesControl />}
+      variants={{ V2: <FeaturesVariant /> }}
+    />
   )
 }
 
