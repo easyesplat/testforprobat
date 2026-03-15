@@ -17,6 +17,9 @@
   transition: all 0.3s ease;
   border: 1px solid #f1f5f9;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feature-card:hover {
@@ -42,6 +45,14 @@
   color: #718096;
   line-height: 1.6;
   font-size: 1rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.feature-card-btn {
+  margin-top: auto;
+  width: 100%;
+  max-width: 200px;
 }
 
 /* Mobile styles */
