@@ -17,18 +17,24 @@
   transition: all 0.3s ease;
   border: 1px solid #f1f5f9;
   text-align: center;
+  cursor: pointer;
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: scale(1.05);
+  box-shadow: 0 24px 48px rgba(102, 126, 234, 0.2);
   border-color: #667eea;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
 }
 
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
   display: block;
+  transition: all 0.3s ease;
 }
 
 .feature-title {
