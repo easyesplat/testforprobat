@@ -16,7 +16,24 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   border: 1px solid #f1f5f9;
+}
+
+/* Control variant - centered alignment */
+.feature-card.control {
   text-align: center;
+}
+
+.feature-card.control .feature-icon {
+  display: block;
+}
+
+/* Experiment variant - left alignment */
+.feature-card.variant {
+  text-align: left;
+}
+
+.feature-card.variant .feature-icon {
+  display: inline-block;
 }
 
 .feature-card:hover {
@@ -28,7 +45,6 @@
 .feature-icon {
   font-size: 3rem;
   margin-bottom: 1.5rem;
-  display: block;
 }
 
 .feature-title {
