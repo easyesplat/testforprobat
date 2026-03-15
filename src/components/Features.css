@@ -17,6 +17,9 @@
   transition: all 0.3s ease;
   border: 1px solid #f1f5f9;
   text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
 }
 
 .feature-card:hover {
@@ -42,6 +45,21 @@
   color: #718096;
   line-height: 1.6;
   font-size: 1rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.feature-link {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.feature-link:hover {
+  transform: translateX(4px);
 }
 
 /* Mobile styles */
