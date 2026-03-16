@@ -70,6 +70,11 @@ body {
   font-size: 18px;
 }
 
+.btn-xlarge {
+  padding: 20px 40px;
+  font-size: 20px;
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -115,5 +120,10 @@ body {
   .btn-large {
     padding: 14px 28px;
     font-size: 16px;
+  }
+  
+  .btn-xlarge {
+    padding: 18px 36px;
+    font-size: 18px;
   }
 }
