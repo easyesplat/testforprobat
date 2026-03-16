@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import { Experiment } from "@probat/react";
 import './Features.css';
 
 interface Feature {
@@ -7,7 +9,8 @@ interface Feature {
   description: string
 }
 
-const Features: React.FC = () => {
+// Control version (original)
+const FeaturesControl: React.FC = () => {
   const features: Feature[] = [
     {
       icon: '⚡',
@@ -64,6 +67,99 @@ const Features: React.FC = () => {
         </div>
       </div>
     </section>
+  )
+}
+
+// Variant version (with Get Started button and social proof)
+const FeaturesVariant: React.FC = () => {
+  const features: Feature[] = [
+    {
+      icon: '⚡',
+      title: 'Lightning Fast',
+      description: 'Built for speed with optimized performance and minimal loading times.'
+    },
+    {
+      icon: '🔒',
+      title: 'Secure',
+      description: 'Enterprise-grade security with end-to-end encryption and compliance.'
+    },
+    {
+      icon: '📱',
+      title: 'Responsive',
+      description: 'Perfect experience across all devices and screen sizes.'
+    },
+    {
+      icon: '🎨',
+      title: 'Customizable',
+      description: 'Fully customizable themes and components to match your brand.'
+    },
+    {
+      icon: '🚀',
+      title: 'Scalable',
+      description: 'Grows with your business from startup to enterprise scale.'
+    },
+    {
+      icon: '💬',
+      title: 'Support',
+      description: '24/7 customer support with dedicated success managers.'
+    }
+  ]
+
+  const handleGetStartedClick = () => {
+    // Track the get_started_click event with origin
+    if (typeof window !== 'undefined' && (window as any).analytics) {
+      (window as any).analytics.track('get_started_click', {
+        origin: 'features_section'
+      });
+    }
+    // Navigate to sign-up flow
+    window.location.href = '/signup';
+  }
+
+  return (
+    <section className="features" id="features">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">Why Choose Us?</h2>
+          <p className="section-description">
+            Discover the features that make our platform the best choice for your needs.
+          </p>
+        </div>
+        
+        <div className="features-grid">
+          {features.map((feature, index) => (
+            <div key={index} className="feature-card">
+              <div className="feature-icon">
+                {feature.icon}
+              </div>
+              <h3 className="feature-title">{feature.title}</h3>
+              <p className="feature-description">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="features-footer">
+          <p className="social-proof-text">Join 10,000+ developers building with us</p>
+          <button 
+            className="btn btn-primary btn-large" 
+            onClick={handleGetStartedClick}
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Wrapper component that uses Probat Experiment
+const Features: React.FC = () => {
+  return (
+    <Experiment
+      id="exp_Features_20260316_a7f3c8b2"
+      control={<FeaturesControl />}
+      variants={{ V1: <FeaturesVariant /> }}
+    />
   )
 }
 
