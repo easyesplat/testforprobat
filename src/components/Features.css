@@ -42,6 +42,32 @@
   color: #718096;
   line-height: 1.6;
   font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.feature-cta {
+  background: transparent;
+  color: #667eea;
+  border: 1px solid transparent;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.feature-cta:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  border-color: #667eea;
+}
+
+.feature-card:hover .feature-cta {
+  opacity: 1;
 }
 
 /* Mobile styles */
