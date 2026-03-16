@@ -9,6 +9,7 @@ const GetStartedButton: React.FC<GetStartedButtonProps> = ({ label = 'Get Starte
   return (
     <button className={`btn btn-primary${large ? ' btn-large' : ''}`}>
       {label}
+      <span style={{ marginLeft: '0.5rem' }}>→</span>
     </button>
   )
 }
