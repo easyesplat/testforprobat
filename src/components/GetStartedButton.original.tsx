@@ -5,10 +5,11 @@ interface GetStartedButtonProps {
   large?: boolean
 }
 
-const GetStartedButton: React.FC<GetStartedButtonProps> = ({ label = 'Get Started Free', large = false }) => {
+const GetStartedButton: React.FC<GetStartedButtonProps> = ({ label = 'Start Building Now', large = false }) => {
   return (
     <button className={`btn btn-primary${large ? ' btn-large' : ''}`}>
       {label}
+      <span style={{ marginLeft: '0.5rem' }}>→</span>
     </button>
   )
 }
