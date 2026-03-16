@@ -1,15 +1,44 @@
 "use client";
+import React from 'react';
 import { ProbatProviderClient, Experiment } from "@probat/react";
-import OriginalComponent from "./GetStartedButton.original";
-import ExperimentVariant from "./GetStartedButton.experiment";
 
-export default function GetStartedButton(props: any) {
+interface GetStartedButtonProps {
+  label?: string;
+  large?: boolean;
+}
+
+// Control version (original)
+const GetStartedButtonControl: React.FC<GetStartedButtonProps> = ({ 
+  label = 'Get Started Free', 
+  large = false 
+}) => {
   return (
-    <ProbatProviderClient userId="f3a91e3e-da2b-4b49-a487-8202d07182c0">
+    <button className={`btn btn-primary${large ? ' btn-large' : ''}`}>
+      {label}
+    </button>
+  );
+};
+
+// Variant version (experiment)
+const GetStartedButtonVariant: React.FC<GetStartedButtonProps> = ({ 
+  label = 'Get Started Free', 
+  large = true 
+}) => {
+  return (
+    <button className={`btn btn-primary${large ? ' btn-large' : ''}`}>
+      {label}
+    </button>
+  );
+};
+
+// Wrapper component with original export name
+export default function GetStartedButton(props: GetStartedButtonProps) {
+  return (
+    <ProbatProviderClient customerId="f3a91e3e-da2b-4b49-a487-8202d07182c0">
       <Experiment
-        id="79d9bb74-0a05-47ee-8397-98d22cdfc961"
-        control={<OriginalComponent {...props} />}
-        variants={{ experiment: <ExperimentVariant {...props} /> }}
+        id="exp_GetStartedButton_20260316_a7c3e8f2"
+        control={<GetStartedButtonControl {...props} />}
+        variants={{ V2: <GetStartedButtonVariant {...props} /> }}
       />
     </ProbatProviderClient>
   );
