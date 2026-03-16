@@ -5,13 +5,13 @@
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
 }
 
 .feature-card {
   background: white;
-  padding: 2.5rem;
+  padding: 3rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -41,7 +41,7 @@
 .feature-description {
   color: #718096;
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 /* Mobile styles */
