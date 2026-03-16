@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import { ProbatProviderClient } from "@probat/react";
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Features from './components/Features'
@@ -7,12 +8,14 @@ import './App.css'
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <Features />
-      <Footer />
-    </div>
+    <ProbatProviderClient>
+      <div className="App">
+        <Header />
+        <Hero />
+        <Features />
+        <Footer />
+      </div>
+    </ProbatProviderClient>
   )
 }
 
