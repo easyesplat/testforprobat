@@ -1,4 +1,5 @@
 import React from "react";
+import { Experiment } from "@probat/react";
 import './Features.css';
 
 interface Feature {
@@ -7,7 +8,8 @@ interface Feature {
   description: string
 }
 
-const Features: React.FC = () => {
+// Control version (original)
+const FeaturesControl: React.FC = () => {
   const features: Feature[] = [
     {
       icon: '⚡',
@@ -64,6 +66,78 @@ const Features: React.FC = () => {
         </div>
       </div>
     </section>
+  )
+}
+
+// Variant version (V2)
+const FeaturesVariant: React.FC = () => {
+  const features: Feature[] = [
+    {
+      icon: '⚡',
+      title: 'Lightning Fast',
+      description: 'Built for speed with optimized performance and minimal loading times.'
+    },
+    {
+      icon: '🔒',
+      title: 'Secure',
+      description: 'Enterprise-grade security with end-to-end encryption and compliance.'
+    },
+    {
+      icon: '📱',
+      title: 'Responsive',
+      description: 'Perfect experience across all devices and screen sizes.'
+    },
+    {
+      icon: '🎨',
+      title: 'Customizable',
+      description: 'Fully customizable themes and components to match your brand.'
+    },
+    {
+      icon: '🚀',
+      title: 'Scalable',
+      description: 'Grows with your business from startup to enterprise scale.'
+    },
+    {
+      icon: '💬',
+      title: 'Support',
+      description: '24/7 customer support with dedicated success managers.'
+    }
+  ]
+
+  return (
+    <section className="features" id="features">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">Powerful Features Built For You</h2>
+          <p className="section-description">
+            Transform your workflow with cutting-edge tools designed to boost productivity and drive results.
+          </p>
+        </div>
+        
+        <div className="features-grid">
+          {features.map((feature, index) => (
+            <div key={index} className="feature-card">
+              <div className="feature-icon">
+                {feature.icon}
+              </div>
+              <h3 className="feature-title">{feature.title}</h3>
+              <p className="feature-description">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Wrapper component that maintains the original export
+const Features: React.FC = () => {
+  return (
+    <Experiment
+      id="exp_Features_20260317_8f4a7b1c"
+      control={<FeaturesControl />}
+      variants={{ V2: <FeaturesVariant /> }}
+    />
   )
 }
 

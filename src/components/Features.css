@@ -3,6 +3,10 @@
   background: white;
 }
 
+.section-title {
+  font-size: 3rem;
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -26,9 +30,14 @@
 }
 
 .feature-icon {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1.5rem;
   display: block;
+  transition: transform 0.2s ease;
+}
+
+.feature-icon:hover {
+  transform: scale(1.1);
 }
 
 .feature-title {
@@ -50,6 +59,10 @@
     padding: 4rem 0;
   }
 
+  .section-title {
+    font-size: 2rem;
+  }
+
   .features-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -60,7 +73,7 @@
   }
 
   .feature-icon {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
   }
 
   .feature-title {
